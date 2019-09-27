@@ -105,6 +105,26 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    @Override
+    public String getMacAddress() {
+        return macInputEt1.getText().toString() +
+                macInputEt2.getText() +
+                macInputEt3.getText() +
+                macInputEt4.getText() +
+                macInputEt5.getText() +
+                macInputEt6.getText();
+    }
+
+    @Override
+    public void setResponse(String macAddressString) {
+        responseTv.setText(macAddressString);
+    }
+
+    @Override
+    public void setWrongMacAddress() {
+        responseTv.setText(getString(R.string.wrong_mac_address));
+    }
+
 
     private abstract class MyTextWatcher implements TextWatcher{
 

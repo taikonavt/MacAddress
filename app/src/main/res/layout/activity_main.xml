@@ -104,10 +104,10 @@
         android:id="@+id/activity_main_response_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin"
         app:layout_constraintTop_toBottomOf="@id/activity_main_send_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 </android.support.constraint.ConstraintLayout>

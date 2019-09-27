@@ -3,4 +3,5 @@
     <string name="mac_address_hint">Input MAC address</string>
     <string name="request">request</string>
     <string name="mac_divider">:</string>
+    <string name="wrong_mac_address">Wrong MAC address</string>
 </resources>
