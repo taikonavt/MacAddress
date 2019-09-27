@@ -1,6 +1,7 @@
-package com.example.macclient.presenter;
+package com.example.macclient.mvp.presenter;
 
-import com.example.macclient.view.MainView;
+
+import com.example.macclient.mvp.view.MainView;
 
 public class MainPresenter {
     private MainView mainView;
