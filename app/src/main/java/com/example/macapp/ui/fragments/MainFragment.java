@@ -1,9 +1,9 @@
-package com.example.macclient.ui.fragments;
+package com.example.macapp.ui.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -14,22 +14,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.macclient.R;
-import com.example.macclient.mvp.presenter.MainPresenter;
-import com.example.macclient.mvp.view.MainView;
+import com.example.macapp.R;
+import com.example.macapp.mvp.presenter.MainPresenter;
+import com.example.macapp.mvp.view.MainView;
 
 public class MainFragment extends Fragment implements MainView {
 
-    MainPresenter presenter;
+    private MainPresenter presenter;
 
-    EditText macInputEt1;
-    EditText macInputEt2;
-    EditText macInputEt3;
-    EditText macInputEt4;
-    EditText macInputEt5;
-    EditText macInputEt6;
-    Button requestBtn;
-    TextView responseTv;
+    private EditText macInputEt1;
+    private EditText macInputEt2;
+    private EditText macInputEt3;
+    private EditText macInputEt4;
+    private EditText macInputEt5;
+    private EditText macInputEt6;
+    private Button requestBtn;
+    private TextView responseTv;
 
     private static final String KEY_RESPONSE = "response";
 
@@ -56,6 +56,18 @@ public class MainFragment extends Fragment implements MainView {
         startInput();
 
         return view;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        presenter.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        presenter.onResume();
     }
 
     private void startInput() {

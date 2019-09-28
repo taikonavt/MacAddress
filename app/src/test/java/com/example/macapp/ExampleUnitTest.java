@@ -1,4 +1,4 @@
-package com.example.macclient;
+package com.example.macapp;
 
 import org.junit.Test;
 
