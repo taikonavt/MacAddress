@@ -4,4 +4,6 @@
     <string name="request">request</string>
     <string name="mac_divider">:</string>
     <string name="wrong_mac_address">Wrong MAC address</string>
+    <string name="start_client">Запустить клиент</string>
+    <string name="start_server">Запустить сервер</string>
 </resources>

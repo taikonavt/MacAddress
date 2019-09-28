@@ -6,13 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.macapp.R;
 import com.example.macapp.ui.fragments.MainFragment;
 
-public class MainActivity extends AppCompatActivity {
-
+public class ClientActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_client);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
