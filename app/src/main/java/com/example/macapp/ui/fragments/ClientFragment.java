@@ -15,12 +15,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.macapp.R;
-import com.example.macapp.mvp.presenter.MainPresenter;
-import com.example.macapp.mvp.view.MainView;
+import com.example.macapp.mvp.presenter.ClientPresenter;
+import com.example.macapp.mvp.view.ClientView;
 
-public class MainFragment extends Fragment implements MainView {
+public class ClientFragment extends Fragment implements ClientView {
 
-    private MainPresenter presenter;
+    private ClientPresenter presenter;
 
     private EditText macInputEt1;
     private EditText macInputEt2;
@@ -33,12 +33,12 @@ public class MainFragment extends Fragment implements MainView {
 
     private static final String KEY_RESPONSE = "response";
 
-    public MainFragment(){
-        presenter = new MainPresenter(this);
+    public ClientFragment(){
+        presenter = new ClientPresenter(this);
     }
 
-    public static MainFragment getInstance(){
-        MainFragment fragment = new MainFragment();
+    public static ClientFragment getInstance(){
+        ClientFragment fragment = new ClientFragment();
         Bundle bundle = new Bundle();
         fragment.setArguments(bundle);
         return fragment;

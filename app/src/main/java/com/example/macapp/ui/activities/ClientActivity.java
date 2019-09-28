@@ -4,7 +4,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.macapp.R;
-import com.example.macapp.ui.fragments.MainFragment;
+import com.example.macapp.ui.fragments.ClientFragment;
 
 public class ClientActivity extends AppCompatActivity {
 
@@ -15,7 +15,7 @@ public class ClientActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.activity_main_container, MainFragment.getInstance())
+                    .add(R.id.activity_main_container, ClientFragment.getInstance())
                     .commit();
         }
     }

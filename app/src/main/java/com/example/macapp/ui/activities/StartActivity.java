@@ -30,11 +30,14 @@ public class StartActivity extends AppCompatActivity {
 
     private void setListeners() {
         startServerBtn.setOnClickListener(view -> {
-//            Intent intent = new Intent(this,)
+            Intent intent = new Intent(this, ServerActivity.class);
+            startActivity(intent);
+            finish();
         });
         startClientBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, ClientActivity.class);
             startActivity(intent);
+            finish();
         });
     }
 }

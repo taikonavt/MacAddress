@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.macapp.ui.activities.ClientActivity"/>
+        <activity android:name=".ui.activities.ServerActivity" />
     </application>
 
 </manifest>

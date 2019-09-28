@@ -10,7 +10,8 @@ public class App extends Application {
     static private App instance;
 
     private FirebaseDatabase database;
-    private DatabaseReference databaseReference;
+    private DatabaseReference databaseRequestReference;
+    private DatabaseReference databaseResponseReference;
 
     @Override
     public void onCreate() {
@@ -18,14 +19,19 @@ public class App extends Application {
         instance = this;
 
         database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("request");
+        databaseRequestReference = database.getReference("request");
+        databaseResponseReference = database.getReference("response");
     }
 
     public static App getInstance(){
         return instance;
     }
 
-    public DatabaseReference getDatabaseReference() {
-        return databaseReference;
+    public DatabaseReference getDatabaseRequestReference() {
+        return databaseRequestReference;
+    }
+
+    public DatabaseReference getDatabaseResponseReference() {
+        return databaseResponseReference;
     }
 }
