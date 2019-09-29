@@ -1,15 +1,15 @@
-package com.example.macapp.mvp.presenter;
+package com.example.macapp.client.mvp.presenter;
 
 
-import com.example.macapp.mvp.model.ClientRepository;
-import com.example.macapp.mvp.view.ClientView;
+import com.example.macapp.client.mvp.model.ClientRepository;
+import com.example.macapp.client.mvp.view.ClientView;
 
 public class ClientPresenter implements ClientObserver {
     private ClientView clientView;
     private ClientRepository clientRepository;
 
     private final static int MAC_ADDRESS_HEX_LENGTH = 12;
-    private final static int HEX_BIT = 16;
+    private final static int HEX_RADIX = 16;
 
     public ClientPresenter(ClientView clientView) {
         this.clientView = clientView;
@@ -19,8 +19,7 @@ public class ClientPresenter implements ClientObserver {
     public void onRequestBtnClick() {
         String macAddressString = clientView.getMacAddress();
         if (isMacAddressCorrect(macAddressString)){
-            // TODO: 28.09.2019 проверить правильно ли я понимаю как работает метод
-            Long macAddressLong = Long.parseLong(macAddressString, HEX_BIT);
+            Long macAddressLong = Long.parseLong(macAddressString, HEX_RADIX);
             clientRepository.sendMac(macAddressLong);
         } else {
             clientView.setWrongMacAddress();

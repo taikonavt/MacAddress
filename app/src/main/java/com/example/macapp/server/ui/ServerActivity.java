@@ -1,11 +1,11 @@
-package com.example.macapp.ui.activities;
+package com.example.macapp.server.ui;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.macapp.R;
-import com.example.macapp.mvp.presenter.ServerPresenter;
-import com.example.macapp.mvp.view.ServerView;
+import com.example.macapp.server.mvp.presenter.ServerPresenter;
+import com.example.macapp.server.mvp.view.ServerView;
 
 import java.util.Set;
 
@@ -24,6 +24,10 @@ public class ServerActivity extends AppCompatActivity
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_server);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(getString(R.string.server_title));
+        }
 
         findViews();
         presenter = new ServerPresenter(this);
@@ -48,7 +52,7 @@ public class ServerActivity extends AppCompatActivity
 
     @Override
     public void setMacAddresses(Set<Long> macAddresses) {
-        macListTv.setText(macAddresses.toString());
+        macListTv.setText(macAddresses.toString().replace(" ", "\n"));
     }
 
     @Override

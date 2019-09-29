@@ -1,4 +1,4 @@
-package com.example.macapp.mvp.view;
+package com.example.macapp.client.mvp.view;
 
 public interface ClientView {
     String getMacAddress();

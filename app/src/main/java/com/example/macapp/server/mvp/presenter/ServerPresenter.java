@@ -1,7 +1,7 @@
-package com.example.macapp.mvp.presenter;
+package com.example.macapp.server.mvp.presenter;
 
-import com.example.macapp.mvp.model.ServerRepository;
-import com.example.macapp.mvp.view.ServerView;
+import com.example.macapp.server.mvp.model.ServerRepository;
+import com.example.macapp.server.mvp.view.ServerView;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ public class ServerPresenter implements ServerObserver{
     private ServerView serverView;
     private ServerRepository repository;
 
-    Set macSet;
+    private Set macSet;
 
     public ServerPresenter(ServerView serverView){
         this.serverView = serverView;
@@ -28,7 +28,7 @@ public class ServerPresenter implements ServerObserver{
     }
 
     @Override
-    public void request(Long value) {
+    public void onRequest(Long value) {
         if (value != null) {
             serverView.setRequest(value.toString());
             repository.sendResponse(macSet.contains(value));

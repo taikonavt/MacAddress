@@ -1,7 +1,7 @@
-package com.example.macapp.mvp.model;
+package com.example.macapp.client.mvp.model;
 
 import com.example.macapp.App;
-import com.example.macapp.mvp.presenter.ClientObserver;
+import com.example.macapp.client.mvp.presenter.ClientObserver;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;

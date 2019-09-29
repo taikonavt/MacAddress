@@ -1,7 +1,7 @@
-package com.example.macapp.mvp.model;
+package com.example.macapp.server.mvp.model;
 
 import com.example.macapp.App;
-import com.example.macapp.mvp.presenter.ServerObserver;
+import com.example.macapp.server.mvp.presenter.ServerObserver;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -32,7 +32,7 @@ public class ServerObservable {
         Iterator iterator = set.iterator();
         while (iterator.hasNext()){
             ServerObserver observer = (ServerObserver) iterator.next();
-            observer.request(value);
+            observer.onRequest(value);
         }
         App.getInstance().getDatabaseRequestReference().setValue(null);
     }
@@ -50,6 +50,4 @@ public class ServerObservable {
             }
         });
     }
-
-
 }

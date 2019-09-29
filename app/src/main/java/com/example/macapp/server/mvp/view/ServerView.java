@@ -1,4 +1,4 @@
-package com.example.macapp.mvp.view;
+package com.example.macapp.server.mvp.view;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package com.example.macapp.mvp.presenter;
+package com.example.macapp.client.mvp.presenter;
 
 public interface ClientObserver {
     void update(Boolean value);

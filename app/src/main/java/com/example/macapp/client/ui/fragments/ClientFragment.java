@@ -1,4 +1,4 @@
-package com.example.macapp.ui.fragments;
+package com.example.macapp.client.ui.fragments;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -15,8 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.macapp.R;
-import com.example.macapp.mvp.presenter.ClientPresenter;
-import com.example.macapp.mvp.view.ClientView;
+import com.example.macapp.client.mvp.presenter.ClientPresenter;
+import com.example.macapp.client.mvp.view.ClientView;
 
 public class ClientFragment extends Fragment implements ClientView {
 

@@ -1,10 +1,10 @@
-package com.example.macapp.ui.activities;
+package com.example.macapp.client.ui.activities;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.macapp.R;
-import com.example.macapp.ui.fragments.ClientFragment;
+import com.example.macapp.client.ui.fragments.ClientFragment;
 
 public class ClientActivity extends AppCompatActivity {
 
@@ -12,6 +12,10 @@ public class ClientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(getString(R.string.client_title));
+        }
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

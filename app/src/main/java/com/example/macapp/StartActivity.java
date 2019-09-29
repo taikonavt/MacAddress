@@ -1,10 +1,11 @@
-package com.example.macapp.ui.activities;
+package com.example.macapp;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.example.macapp.R;
+import com.example.macapp.client.ui.activities.ClientActivity;
+import com.example.macapp.server.ui.ServerActivity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;

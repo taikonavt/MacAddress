@@ -1,4 +1,4 @@
-package com.example.macapp.mvp.model;
+package com.example.macapp.client.mvp.model;
 
 import com.example.macapp.App;
 
