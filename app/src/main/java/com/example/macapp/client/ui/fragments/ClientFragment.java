@@ -3,6 +3,7 @@ package com.example.macapp.client.ui.fragments;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -49,6 +50,10 @@ public class ClientFragment extends Fragment implements ClientView {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, null);
         setRetainInstance(true);
+
+        if (getActivity() != null && ((AppCompatActivity)getActivity()).getSupportActionBar() != null) {
+            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.client_title);
+        }
 
         setViews(view);
         setOnEtChangeListeners();
@@ -154,11 +159,15 @@ public class ClientFragment extends Fragment implements ClientView {
     }
 
     @Override
-    public void setResponse(String macAddressString) {
+    public void setResponse(Boolean macAddressIsConnected) {
         if (getArguments() != null) {
-            getArguments().putString(KEY_RESPONSE, macAddressString);
+            getArguments().putBoolean(KEY_RESPONSE, macAddressIsConnected);
         }
-        responseTv.setText(macAddressString);
+        if (macAddressIsConnected){
+            responseTv.setText(getString(R.string.device_connected));
+        } else {
+            responseTv.setText(getString(R.string.device_disconnected));
+        }
     }
 
     @Override

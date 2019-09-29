@@ -33,7 +33,7 @@ public class ClientPresenter implements ClientObserver {
     @Override
     public void update(Boolean value) {
         if (value != null) {
-            clientView.setResponse(value.toString());
+            clientView.setResponse(value);
         }
     }
 

@@ -13,10 +13,6 @@ public class ClientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(getString(R.string.client_title));
-        }
-
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.activity_main_container, ClientFragment.getInstance())
