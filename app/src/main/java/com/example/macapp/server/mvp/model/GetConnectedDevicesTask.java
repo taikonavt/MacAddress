@@ -13,7 +13,7 @@ import java.util.Set;
 
 class GetConnectedDevicesTask extends AsyncTask<ResultWraper, Void, Set<Long>> {
 
-    private static int HEX_RADIX = 16;
+    private static final int HEX_RADIX = 16;
 
     private ResultWraper resultWraper;
 
@@ -21,11 +21,10 @@ class GetConnectedDevicesTask extends AsyncTask<ResultWraper, Void, Set<Long>> {
     protected Set<Long> doInBackground(ResultWraper... resultWrapers) {
         resultWraper = resultWrapers[0];
         int reachableTimeout = 1000;
-        BufferedReader br;
+
         Set<Long> set = new HashSet<>();
 
-        try {
-            br = new BufferedReader(new FileReader("/proc/net/arp"));
+        try(BufferedReader br = new BufferedReader(new FileReader("/proc/net/arp"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] splitted = line.split(" +");
