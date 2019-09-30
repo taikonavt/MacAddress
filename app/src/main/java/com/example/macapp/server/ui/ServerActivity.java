@@ -51,8 +51,8 @@ public class ServerActivity extends AppCompatActivity
     }
 
     @Override
-    public void setMacAddresses(Set<Long> macAddresses) {
-        macListTv.setText(macAddresses.toString().replace(" ", "\n"));
+    public void setMacAddresses(String macAddresses) {
+        macListTv.setText(macAddresses);
     }
 
     @Override

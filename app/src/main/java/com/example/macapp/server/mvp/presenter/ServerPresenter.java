@@ -10,7 +10,7 @@ public class ServerPresenter implements ServerObserver{
     private ServerView serverView;
     private ServerRepository repository;
 
-    private Set macSet;
+    private Set macAddressesSet;
 
     public ServerPresenter(ServerView serverView){
         this.serverView = serverView;
@@ -18,8 +18,15 @@ public class ServerPresenter implements ServerObserver{
     }
 
     public void onResume() {
-        macSet = repository.getMacAddresses();
-        serverView.setMacAddresses(macSet);
+        repository.getMacAddresses(result -> {
+            macAddressesSet = result;
+            Object[] macAddressesArray = macAddressesSet.toArray();
+            String macAddressString = new String();
+            for (int i = 0; i < macAddressesArray.length; i++) {
+                macAddressString = macAddressString + macAddressesArray[i] + "\n";
+            }
+            serverView.setMacAddresses(macAddressString);
+        });
         repository.subscribeRequest(this);
     }
 
@@ -29,9 +36,9 @@ public class ServerPresenter implements ServerObserver{
 
     @Override
     public void onRequest(Long value) {
-        if (value != null) {
+        if (value != null && macAddressesSet != null) {
             serverView.setRequest(value.toString());
-            repository.sendResponse(macSet.contains(value));
+            repository.sendResponse(macAddressesSet.contains(value));
         }
     }
 }
